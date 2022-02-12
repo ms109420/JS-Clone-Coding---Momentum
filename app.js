@@ -1,24 +1,13 @@
-//prompt를 사용할때 모든 값이 string으로 나오기 때문에 형변환을 시켜줘야함
+/*
+js는 HTML과 연결 되어있다
+HTML에서 정보를 가져올 수 있고
+JS에서 그 항목들을 볼 수 있다
+*/
 
-const age = parseInt(prompt("How old are you"));
+const title = document.getElementById("title"); 
+//HTML에서 id를 통해 title를 가져윰
 
-//console.log(typeof "15", typeof parseInt("15"));
+title.innerText = "Got you!"
 
-///console.log(isNaN(age)); // 숫자는 false 글자는 true  false인 이유(숫자가 아닌것 에서 부정)
-
-if(isNaN(age) || age < 0){
-    console.log("Please write a real positive number");
-} else if (age < 18) {
-    console.log("You are too young.");
-} else if(age >= 18 && age <=50) {
-    console.log("you can drink");
-} else if(age > 50 && age <=80) {
-    console.log("You should exercise");
-} else if(age > 8){
-    console.log("You can do whatever you want.");
-}
-
-
-
-
- 
+console.log(title.id);
+console.log(title.className);
