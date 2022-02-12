@@ -1,13 +1,16 @@
+const title = document.querySelectorAll(".hello h1");
+
+console.log(title);
+
 /*
-js는 HTML과 연결 되어있다
-HTML에서 정보를 가져올 수 있고
-JS에서 그 항목들을 볼 수 있다
+- querySelector : element를 CSS selector방식 검색(ex. h1:first-child)***가장 많이 쓰임
+- getElementById: 하나의 값 반환
+- getElementsByClassName() : 많은 element를 가져올때 씀(배열)
+- getElementsByTagName() : name을 할당 가능(배열)
+
+const title = document.querySelectorAll("#hello");
+const title = document.getElementById("hello");
+둘의 코드는 같다 querySelectorAll는 CSS selector 자체를 전달
+#이 붙는 이유는 id를 가져온다고 명시해줘야 하기 떄문이다
+
 */
-
-const title = document.getElementById("title"); 
-//HTML에서 id를 통해 title를 가져윰
-
-title.innerText = "Got you!"
-
-console.log(title.id);
-console.log(title.className);
