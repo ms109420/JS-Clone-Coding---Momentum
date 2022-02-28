@@ -1,20 +1,17 @@
 const loginForm   = document.querySelector("#login-form");
-const loginIput = document.querySelector("#login-form input");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
 
+const HIDDEN_CLASSNAME = "hidden"
 
-const link = document.querySelector("a");
-
-function onLoginSubmit(tomato) {
-    tomato.preventDefault(); //브라우저가 새로고침 되는것을 막아줌
-    console.log(tomato);
+function onLoginSubmit(event) {
+    event.preventDefault(); //브라우저가 새로고침 되는것을 막아줌
+    loginForm.classList.add("hidden"); //입력하면 입력창을 없애줌
+    const username = loginInput.value; //입력한 유저 이름을 변수에 저장
+    greeting.innerText = `Hello  ${username}`; 
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+    
 }  
 
-//tomato(event)는 submit의 정보 및 기능을 담는 object이다
-function handleLinkClick(event){
-    event.preventDefault();
-    console.log(event);
-
-}
-
 loginForm.addEventListener("submit", onLoginSubmit);
-link.addEventListener("click", handleLinkClick);
+
