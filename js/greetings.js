@@ -26,6 +26,6 @@ if(savedUsername === null){ //입력값이 없으면 form을 보이게 함
     loginForm.addEventListener("submit", onLoginSubmit); //입력값 기다림
 
 } else {
-    paintGreetings(saedUsername);
+    paintGreetings(savedUsername);
     
 }
