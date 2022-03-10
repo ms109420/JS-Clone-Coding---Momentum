@@ -33,32 +33,26 @@ function paintToDo(newTodo){
     toDoList.appendChild(li);
 }
 
-function handleToDoSubmit(event){
+function handleToDoSubmit(event) {
     event.preventDefault();
     const newTodo = toDoInput.value; //입력값을 변수에 저장
     //아래에 값을 비운다해도 newTodo의 값이 사라지지는 않는다
     toDoInput.value = "";
     const newTodoObj = {
-        text:newTodo,
-        id: Date.now(),
+      text: newTodo,
+      id: Date.now(),
     };
     toDos.push(newTodoObj);
     paintToDo(newTodoObj);
     saveToDos();
-
-}
-
-toDoForm.addEventListener("submit", handleToDoSubmit);
-
-function sayHello(item){
-    console.log("THis is the turn of", item);
-}
-
-const savedToDos = localStorage.getItem(TODOS_KEY);
-console.log(savedToDos);
-if(savedToDos !== null){
+  }
+  
+  toDoForm.addEventListener("submit", handleToDoSubmit);
+  
+  const savedToDos = localStorage.getItem(TODOS_KEY);
+  
+  if (savedToDos !== null) {
     const parsedToDos = JSON.parse(savedToDos);
     toDos = parsedToDos;
     parsedToDos.forEach(paintToDo);
-}
-
+  }
